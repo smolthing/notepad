@@ -52,6 +52,13 @@
         const colorButton = document.getElementById('color-button');
         const fontButton = document.getElementById('font-button');
         const fontFamilyButton = document.getElementById('font-family-button');
+        const storedText = localStorage.getItem('notepad_content');
+        if (storedText) {
+            textBox.value = storedText;
+        }
+        textBox.addEventListener('change', () => {
+            localStorage.setItem('notepad_content', textBox.value);
+        });
 
         const colors = ["#4793AF", "#FFC470", "#DD5746", "#337357", "#3c3535", "#000"];
         let currentIndexColor = 0;
