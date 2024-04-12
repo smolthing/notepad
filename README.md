@@ -1,4 +1,4 @@
-# Notepad
+# [Notepad](https://smolthing.github.io/notepad/)
 A simple notepad to record text typing in my video.
 
 Store in localstorage.
