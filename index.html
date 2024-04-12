@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Notepad</title>
+<style>
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 500px;
+        height: 100vh;
+    }
+
+    #text-box {
+        width: 60%;
+        height: 60%;
+        padding: 10px;
+        font-size: 50px;
+        border: none;
+        outline: none;
+        background-color: transparent;
+        font-family: sans-serif;
+        font-weight: bold;
+    }
+
+    .button {
+        padding: 10px 20px;
+        margin: 10px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    
+    .setting {
+        text-align: center;
+    }
+</style>
+</head>
+<body>
+    <div class="container">
+        <textarea type="text" id="text-box" autofocus></textarea>
+    </div>
+    <div class="setting">
+        <button id="color-button" class="button">Color</button>
+        <button id="font-button" class="button">Font Size</button>
+        <button id="font-family-button" class="button">Font Family</button>
+    </div>
+    <script>
+        const textBox = document.getElementById('text-box');
+        const colorButton = document.getElementById('color-button');
+        const fontButton = document.getElementById('font-button');
+        const fontFamilyButton = document.getElementById('font-family-button');
+
+        const colors = ["#4793AF", "#FFC470", "#DD5746", "#337357", "#3c3535", "#000"];
+        let currentIndexColor = 0;
+
+        const fontSizes = ["50px", "100px", "30px"];
+        let currentIndexFontSize = 0;
+
+        const fontFamilies = [ "serif", "monospace", "sans-serif"];
+        let currentIndexFontFamily = 0;
+
+        colorButton.addEventListener('click', () => {
+            currentIndexColor = (currentIndexColor + 1) % colors.length;
+            textBox.style.color = colors[currentIndexColor];
+        });
+
+        fontButton.addEventListener('click', () => {
+            currentIndexFontSize = (currentIndexFontSize + 1) % fontSizes.length;
+            textBox.style.fontSize = fontSizes[currentIndexFontSize];
+        });
+
+        fontFamilyButton.addEventListener('click', () => {
+            currentIndexFontFamily = (currentIndexFontFamily + 1) % fontFamilies.length;
+            textBox.style.fontFamily = fontFamilies[currentIndexFontFamily];
+        });
+    </script>
+</body>
+</html>
