@@ -40,7 +40,7 @@
 </head>
 <body>
     <div class="container">
-        <textarea type="text" id="text-box" autofocus></textarea>
+        <textarea type="text" id="text-box" autofocus spellcheck="false"></textarea>
     </div>
     <div class="setting">
         <button id="color-button" class="button">Color</button>
@@ -66,7 +66,7 @@
         const fontSizes = ["50px", "100px", "30px"];
         let currentIndexFontSize = 0;
 
-        const fontFamilies = [ "serif", "monospace", "sans-serif"];
+        const fontFamilies = ["serif", "monospace", "sans-serif"];
         let currentIndexFontFamily = 0;
 
         colorButton.addEventListener('click', () => {
